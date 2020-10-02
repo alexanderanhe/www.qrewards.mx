@@ -1,0 +1,39 @@
+<!-- Formulario -->
+<section class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 text-md-center">
+            <form class="px-2 px-sm-5 px-md-0 form-horizontal form-material animated fadeInDown" ngNativeValidate #f="ngForm" id="registerform" (ngSubmit)="register( f )">
+                <label class="title pt-3">COMPÁRTENOS TUS DATOS</label>
+                <p class="pb-2">Proporciona completos los siguientes datos ¡y recibe tu recompensa!</p>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left"><strong>NOMBRE:</strong></label>
+                    <input [ngModel] type="text" name="name" value="" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left"><strong>APELLIDOS:</strong></label>
+                    <input [ngModel] type="text" name="lastname" value="" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left"><strong>MUNICIPIO:</strong></label>
+                    <input [ngModel] type="text" name="mun" value="" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left"><strong>ESTADO:</strong></label>
+                    <input [ngModel] type="text" name="state" value="" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left"><strong>CORREO ELECTRÓNICO:</strong></label>
+                    <input [ngModel] type="email" name="email" value="" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left"><strong>CONFIRMAR CORREO ELECTRÓNICO:</strong></label>
+                    <input [ngModel] type="email" name="email_confirm" value="" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <a href="javascript: void(0)" (click)="_userService.logout()" class="btn btn-primary text-white col-12 offset-md-7 col-md-2">Salir <i class="fas fa-play px-2"></i></a>
+                    <button [disabled]="loadingRequest" type="submit" class="btn btn-primary col-12 col-md-3">Continuar <i class="fas fa-play px-2"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

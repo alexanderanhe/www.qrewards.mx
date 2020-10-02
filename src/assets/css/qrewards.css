@@ -1,0 +1,140 @@
+
+body {
+  background-color: #FFFFFF;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    border: none;
+}
+
+.title_download {
+		font-family: 'Raleway', sans-serif;
+	    font-weight: 300;
+	    font-size: 32px;
+	    color: #e72b2e;
+	}
+
+.subtitle_download {
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    color: #e72b2e; 
+}
+
+
+.title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color: #e72b2e;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #4b4949;
+    margin-top: 0;
+}
+
+
+ul {
+	font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #4b4949;
+}
+
+
+.btn-primary {
+  background-color: #e72b2e !important;
+  border-color: #FFFFFF;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #FFFFFF !important;
+  color: #e72b2e !important;
+  border: 1px solid #e72b2e !important;
+}
+.bg-primary {
+  background-color: #e72b2e !important;
+}
+
+.bg-secondary {
+  background-color: #ddf0ec !important;
+}
+
+.g-recaptcha {
+      transform: scale(0.84);
+      transform-origin: 0 0;
+                       
+    }
+
+
+
+@media (min-width: 320px) {
+	.title_download {
+		font-family: 'Raleway', sans-serif;
+	    font-weight: 300;
+	    font-size: 25px;
+	    color: #e72b2e;
+	}
+
+	.subtitle_download {
+
+	    font-family: 'Raleway', sans-serif;
+	    font-weight: 800;
+	    font-size: 25;
+	    color: #e72b2e; 
+	}
+  .img-carrier {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 768px) {
+  .g-recaptcha {
+    transform: scale(1.00);
+    transform-origin: 0 0;                     
+  }
+
+  .img-carrier {
+    max-width: 90%;
+  }
+
+}
+
+
+@media (min-width: 992px) {
+  .g-recaptcha {
+      transform: scale(1.10);
+      transform-origin: 0 0;
+                       
+    }
+
+}
+
+
+@media (min-height: 1024px) {
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.label-carrier,
+.block-carrier {
+  display: none;
+}
+
+
+
+
+
+

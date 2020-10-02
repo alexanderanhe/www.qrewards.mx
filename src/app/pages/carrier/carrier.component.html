@@ -1,0 +1,64 @@
+<!-- Formulario -->
+<section class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 text-md-center" *ngIf="!rchrg_message">
+            <form class="px-2 px-sm-5 px-md-0 carrier-form" ngNativeValidate #f="ngForm" id="carrierform" (ngSubmit)="rechargeEject( f )">
+                <label class="title pt-3 text-center">SELECCIONA TU TELEFÓNICA</label>
+                <input [ngModel]="carrier" type="hidden" name="company" value=""/>
+                <div class="row justify-content-center" *ngIf="carriers.length">
+                    <div class="col-12 col-md-4 px-2 text-center" *ngFor="let c of carriers">
+                        <input id="{{ c }}"  type="radio" name="carrier" (click)="selCarrier(c)" class="company" />
+                        <label for="{{ c }}"><img [src]="'./assets/images/carriers/' + c +'.png'" class="img-carrier"></label>
+                    </div>
+                </div>
+                <div class="py-5" *ngIf="!carriers.length">
+                    <p class="text-center">No hay ninguna compañía disponible</p>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left"><strong>NÚMERO DE CELULAR (10 DIGITOS):</strong></label>
+                    <input [ngModel] type="tel" name="cellphone" id="telephone_number" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left"><strong>CONFIRMAR NÚMERO DE CELULAR</strong></label>
+                    <input [ngModel] type="tel" name="cellphone_confirm" id="telephone_number2" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <a href="javascript: void(0)" (click)="_userService.logout()" class="btn btn-primary text-white offset-md-7 col-md-2">Salir <i class="fas fa-play px-2"></i></a>
+                    <button [disabled]="loadingRequest" type="submit" id="btn_continue" class="btn btn-primary col-md-3">Continuar <i class="fas fa-play px-2"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 text-md-center" *ngIf="rchrg_message">
+            <div class="col-12">
+				<p align="center"><span  class="title_download">HA SIDO REGISTRADA</span><br>
+      			<span class="subtitle_download">TU RECARGA TELEFÓNICA</span></p>
+			</div>
+			<div class="col-12 offset-md-3 col-md-6">
+                <pre class="mb-3 text-left bg-secondary" *ngIf="rchrg_message?.id">reference: {{ rchrg_message?.reference }}
+authorization: {{ rchrg_message?.authorization }}
+
+{{ rchrg_message?.info_client }}</pre>
+				<form class="">
+		        	<ul class="text-justify">
+				    	<li class="pb-3">La recarga se realizará de forma inmediata ó en un lapso no mayor a 24 hrs.
+						</li>
+				      	<li class="pb-3">Una vez realizada la recarga a la linea telefónica podrás recibir un mensaje SMS de confirmación de la compañía telefónica.
+						</li>
+				      	<li class="pb-3">Una vez abonado el saldo a la línea telefónica, NO HAY CANCELACIONES.
+				      	</li>
+				      	<li class="pb-3">El saldo abonado de la línea telefónica se rige bajo las condiciones de contrato pactadas con la compañía de telefonía celular.</li>
+				      	<li class="pb-3">
+				      		Las solicitudes de recarga de saldo registradas los viernes, fines de semana y días festivos se realizarán al siguiente día hábil.
+				      	</li>
+				      	<li class="pb-3">
+				      		La recarga de saldo aplica únicamente para planes de pre-pago y mixtos.
+				      	</li>
+				    </ul>
+		          <div class="form-group text-center">
+                    <a href="javascript: void(0)" (click)="_userService.logout()" class="btn btn-primary text-white">Registra otra recarga <i class="fas fa-play px-2"></i></a>
+		          </div>
+		        </form>
+			</div>
+        </div>
+    </div>
+</section>

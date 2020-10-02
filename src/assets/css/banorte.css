@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/*----------------------------------------
+SOBREESCRIBIENDO  LOS ESTILOS DE BOOTSTRAP
+------------------------------------------*/
+.bg-primary {
+  background-color: #ea0029 !important;
+}
+.bg-dark {
+  background-color: #000000 !important;
+ }
+
+ .btn-primary {
+  background-color: #ea0029 !important;
+  border-color: #FFFFFF;
+ }
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #FFFFFF !important;
+  color: #ea0029 !important;
+  border: 2px solid #ea0029 !important;
+}
+
+a:hover,
+a:focus {
+  font-size: 15px;
+}
+
+
+
+/*--------------------------
+ESTILOS DEL DISEÑO
+---------------------------*/
+
+.bg-body {
+  /* Ubicación de la imagen */
+
+  background-image: url(../images/banorte/banorte_03.jpg);
+
+  /* Para dejar la imagen de fondo centrada, vertical y
+
+  horizontalmente */
+
+  background-position: bottom center;
+
+  /* Para que la imagen de fondo no se repita */
+
+  background-repeat: no-repeat;
+
+  /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+
+  background-attachment: fixed;
+
+  /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+
+  background-size: contain;
+
+  /* Se muestra un color de fondo mientras se está cargando la imagen
+
+  de fondo o si hay problemas para cargarla */
+
+  background-color: #dddddd;
+}
+
+.titulo {
+  font-family:Helvetica, Arial, sans-serif;
+    font-family: 'robotoregular';
+  font-size: 24px;
+  text-transform:uppercase;
+  color: #db1836;
+}
+
+.subtitulo_head {
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: 'sinkin_sans300_light';
+  font-size: 15px;
+  color: #000;
+  font-weight:normal;
+}
+
+hr {
+  border: 1px dashed #ea0029; 
+}
+
+
+@media (max-width: 576px) {
+
+    .g-recaptcha {
+      transform: scale(0.84);
+      transform-origin: 0 0;
+                       
+    }
+    
+}
+
+@media only screen and (min-width : 991px) {
+    .img-store {
+        display: block;
+    }
+    .img-popcorn {
+        background-image: url(../images/banorte/bg.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+        height: 69vh;
+        margin: 0 -10vh -40vh -10vh;
+
+    }
+    .img-popcorn img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .desktop-wallpaper {
+        background-image: initial;
+    }
+    .account-form-block {
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    #copyright-section-3 {
+        padding-top: 0;
+    }
+    .txt-font {
+      font-size: 300px;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+    .img-popcorn {
+        background-size: cover;
+        height: 100vh;
+        margin: 0 -10vh -30vh -10vh;
+
+    }
+
+    .txt-font {
+      font-size: 20px;
+    }
+
+}
+
+.border-color:hover,
+.border-color:focus {
+  border: 2px solid #ea0029 !important;
+
+}
+
+.border-color-change {
+  border: 2px solid #ea0029 !important;
+
+}
+
+
+/*------------------------
+SHOW DE LOS MEDIAS QUERIES
+------------------------*/
+/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,30 @@
+<!-- Formulario -->
+<section class="container">
+    <div class="row">
+        <div class="col-12 col-md-7 offset-md-2 text-md-center">
+            <form class="px-2 px-sm-5 px-md-0" ngNativeValidate #f="ngForm" class="form-horizontal form-material animated fadeInDown" id="loginform" (ngSubmit)="oauth( f )">
+                <label class="title pt-3">¡FELICIDADES, YA GANASTE!</label>
+                <p class="pb-2 text">Confirma por favor los requisitos del sistema antes de ingresar tu código de Recompensa:</p>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left">CÓDIGO DE RECOMPENSA:</label>
+                    <input [ngModel]="code" type="text" name="code" value="" class="form-control col-12 col-sm-7" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-md-left">Válida Recaptcha:</label>
+                    <div class="g-recaptcha col-12 col-md-7">
+                        <re-captcha (resolved)="resolveRecaptcha($event)" siteKey="6LfDGagUAAAAAPcsQcZBC3WT23JPsvNXIgUGCleU"></re-captcha>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 offset-md-1">
+                        <input [ngModel]="conditions" type="checkbox" class="" name="conditions">&nbsp;
+                        <a routerLink="/aviso-de-privacidad" target="_blank" style="color: #ea0029;"><small class="">He leído y acepto términos y condiciones</small></a>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <button [disabled]="loadingRequest" type="submit" id="btn_continue" class="btn btn-primary col-12 offset-md-7 col-md-3">Continuar <i class="fas fa-play px-2"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

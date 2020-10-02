@@ -1,0 +1,31 @@
+<div class="loading-page" *ngIf="pageLoading">
+    <div class="loader-content"></div>
+</div>
+<!-- Formulario -->
+<section class="container-fluid" *ngIf="!pageLoading">
+    <div class="row">
+        <div class="col-12">
+            <p align="center"><span class="title_download">Gracias <span>{{ user.record.name }}</span></span><br>
+                <span *ngIf="!descr_type" class="subtitle_download">¡TU RECOMPENSA ESTÁ LISTA!</span>
+                <span *ngIf="descr_type == 'sbk'" class="subtitle_download">¡TU STARBUCKS® CARD DIGITAL/CÓDIGO ESTÁ LISTO!</span>
+            </p>
+        </div>
+        <div class="col-12 offset-md-3 col-md-6">
+            <ul class="text-justify animated fadeInDown">
+                <li class="pb-3" [ngClass]="{'d-none': descr_type !== 'sbk' }">Una vez descargado tu cupón se enviará un correo electrónico de confirmación de <a href="https://www.qrewards.mx/">www.qrewards.mx</a> a <b>{{ user.record.email }}</b>, con número de STARBUCKS® CARD DIGITAL y PIN o tu código STARBUCKS®,
+                    si no recibes el mensaje revisa en la carpeta de correos no deseados o contáctanos al <a href="tel:01(55) 524 937 52">01(55) 524 937 52</a>.</li>
+                <li class="pb-3" [ngClass]="{'d-none': descr_type !== 'sbk' }">Guarda o imprime tus datos STARBUCKS®, antes del {{ user.valid_date.day }} a las {{ user.valid_date.hour }}, hora de la CDMX, después de esa fecha ya no podrás acceder a consultar dicha información.</li>
+                <li class="pb-3" [ngClass]="{'d-none': !!descr_type }">Una vez descargado tu cupón se enviará un correo electrónico de confirmación de <a href="https://www.qrewards.mx/">www.qrewards.mx</a> a <b>{{ user.record.email }}</b> con tu recompensa, si no recibes el mensaje revisa en la carpeta de
+                    correos no deseados o contáctanos al <a href="tel:01(55) 524 937 52">01(55) 524 937 52</a>.</li>
+                <li class="pb-3" [ngClass]="{'d-none': !!descr_type }">Guarda o imprime tu certificado antes del {{ user.valid_date.day }} a las {{ user.valid_date.hour }}, hora de la CDMX, después de esa fecha ya no podrás acceder a consultar dicha información.</li>
+                <li class="pb-3">Disfruta tu regalo antes del {{ user.valid_date.promo_ends | date:'d MMM yyyy' }}.</li>
+                <li class="">Una vez utilizado el código quedará inválido, no se podrá duplicar las activaciones.</li>
+            </ul>
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-primary text-white" (click)="download()">Descargar cupón <i class="fa fa-download" aria-hidden="true"></i></button>
+                <a href="javascript: void(0)" (click)="_userService.logout()" class="btn btn-primary text-white">Inicio <i class="fas fa-play px-2"></i></a>
+            </div>
+            <iframe [src]="media_url | imageSafe" style="display: none;"></iframe>
+        </div>
+    </div>
+</section>
